@@ -4,6 +4,8 @@ const CONFIG = {
   lancamento: "20 DE NOVEMBRO DE 2026",
   lancamentoData: "2026-11-20T00:00:00-03:00",
   panoramica: "./Imagens/home.png",
+  videoFundo: "Home.mp4",
+  videoPoster: "./Imagens/1.png",
 
   galeria: [
     { src: "./Imagens/1.png", legenda: "Frota P — Identidade Visual Motiva" },
@@ -125,6 +127,15 @@ const R = {
   /* HOME */
   home: () => `
     <section class="hero">
+      ${
+        CONFIG.videoFundo
+          ? `<video class="hero-video" src="${CONFIG.videoFundo}"
+               ${CONFIG.videoPoster ? `poster="${CONFIG.videoPoster}"` : ""}
+               autoplay muted loop playsinline preload="auto"
+               aria-hidden="true"></video>
+             <div class="hero-ov"></div>`
+          : ""
+      }
       ${marquee("big", "m-branco.png", 80)}
       <div class="w in">
 
@@ -277,12 +288,15 @@ const R = {
 
               <div>
                 <dt>Tamanho</dt>
-                <dd>${val(d.tamanho, "[Definir]")}</dd>
+                <dd>${val(d.tamanho, "[243.2 MB]")}</dd>
               </div>
 
               <div>
                 <dt>Requisitos</dt>
-                <dd>${val(d.requisitos, "Windows 10 ou 11<br>OpenBVE atualizado<br>Espaço livre em disco")}</dd>
+                <dd>${val(
+                  Array.isArray(d.requisitos) ? d.requisitos.join("<br>") : d.requisitos,
+                  "Windows 10 ou 11<br>OpenBVE atualizado<br>Espaço livre em disco"
+                )}</dd>
               </div>
             </dl>
           </div>
@@ -487,6 +501,10 @@ function route() {
     CONFIG.nome;
 
   window.scrollTo(0, 0);
+
+  const hv = $(".hero-video");
+  if (hv) { hv.muted = true; hv.play().catch(() => {}); }
+
   countdown();
 }
 
