@@ -3,8 +3,8 @@ const CONFIG = {
   nome: "Linha 5-Lilás — Padrão Motiva",
   lancamento: "20 DE NOVEMBRO DE 2026",
   lancamentoData: "2026-11-20T00:00:00-03:00",
+  panoramica: "./Imagens/home.png",
   videoFundo: "Home.mp4",
-  videoPoster: "./Imagens/1.png",
 
   galeria: [
     { src: "./Imagens/1.png", legenda: "Frota P — Identidade Visual Motiva" },
