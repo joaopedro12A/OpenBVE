@@ -5,6 +5,7 @@ const CONFIG = {
   lancamentoData: "2026-11-20T00:00:00-03:00",
   panoramica: "./Imagens/home.png",
   videoFundo: "Home.mp4",
+  videoPoster: "./Imagens/1.png",
 
   galeria: [
     { src: "./Imagens/1.png", legenda: "Frota P — Identidade Visual Motiva" },
