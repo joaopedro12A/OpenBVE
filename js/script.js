@@ -67,14 +67,13 @@ const CONFIG = {
       }
     ],
     colaboradores: [
-      {
-        nome: "Luan14_",
-        obs: "Colaborador do projeto Linha 5-Lilás — Padrão Motiva."
-      },
-      {
-        nome: "VF",
-        obs: "Colaborador do projeto Linha 5-Lilás — Padrão Motiva."
-      }
+      // foto: caminho da imagem (ex.: "img/colaboradores/luan.jpg") — vazio mostra a inicial
+      // youtube: link do canal (ex.: "https://www.youtube.com/@usuario") — vazio deixa o ícone desativado
+      { usuario: "Luan14_", foto: "./Collab/Luan.jpg", youtube: "https://www.youtube.com/@bfn_multi24" },
+      { usuario: "matheuspictures",      foto: "./Collab/MP.jpg", youtube: "https://www.youtube.com/@matheuspictures" },
+      { usuario: "NosTrilhosdeSãoPaulo",      foto: "/Collab/NSP.jpg", youtube: "https://www.youtube.com/@NosTrilhosdeS%C3%A3oPaulo" },
+      { usuario: "Ohama4303",      foto: "/Collab/Ohama.jpg", youtube: "https://www.youtube.com/@ohama4303" },
+      { usuario: "VinizzK",      foto: "/Collab/VF.jpg", youtube: "https://www.youtube.com/@VinizzK" },
     ],
     referencias: [
       {
@@ -115,6 +114,19 @@ const pageTitle = (t, s) =>
 
 const val = (v, f) =>
   v ? v : `<span style="opacity:.6;font-weight:400">${f}</span>`;
+
+const YT_ICON = `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.500 0 9.400-.5a3 3 0 0 0 2.100-2.100c.5-1.900.5-5.800.5-5.800s0-3.900-.5-5.800ZM9.600 15.600V8.400l6.200 3.600-6.200 3.600Z"/></svg>`;
+
+const colabCard = c => {
+  const ini = (c.usuario.replace(/[^a-zA-Z0-9]/g, "")[0] || "?").toUpperCase();
+  const avatar = c.foto
+    ? `<img src="${c.foto}" alt="Foto de ${c.usuario}" loading="lazy">`
+    : `<span aria-hidden="true">${ini}</span>`;
+  const yt = c.youtube
+    ? `<a class="yt" href="${c.youtube}" target="_blank" rel="noopener" aria-label="Canal de ${c.usuario} no YouTube" title="Abrir canal no YouTube">${YT_ICON}</a>`
+    : `<span class="yt off" role="img" aria-label="Canal do YouTube ainda não informado" title="Canal ainda não informado">${YT_ICON}</span>`;
+  return `<div class="cb"><div class="av">${avatar}</div><div class="u">@${c.usuario}<small>Colaborador</small></div>${yt}</div>`;
+};
 
 const credList = a =>
   `<ul class="list">${a.map(x => `<li><b>${x.nome}</b>${x.obs}</li>`).join("")}</ul>`;
@@ -408,11 +420,11 @@ const R = {
               ${credList(c.trens)}
             </div>
 
-            <div>
-              <h3>Colaboradores</h3>
-              ${credList(c.colaboradores)}
-            </div>
+          </div>
 
+          <h3 class="sec-h">Colaboradores</h3>
+          <div class="colabs">
+            ${c.colaboradores.map(colabCard).join("")}
           </div>
 
           <div class="notice">

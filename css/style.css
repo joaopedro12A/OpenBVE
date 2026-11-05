@@ -48,6 +48,15 @@ section.s{padding:72px 0}h2{font-size:clamp(28px,3.6vw,42px);line-height:1.1;mar
 dl{margin:0;display:grid;gap:12px;align-content:start}dl div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:10px}dt{opacity:.7}dd{margin:0;font-weight:500;text-align:right}
 .list{margin:12px 0 0;padding:0;list-style:none;display:grid;gap:10px}.list li{border:1px dashed var(--bd);border-radius:10px;padding:14px 16px;color:var(--mu);font-size:15px}.list b{color:var(--tx);display:block;font-weight:500}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:36px 40px}.two h3{margin:0;font-size:22px;padding-bottom:10px;border-bottom:3px solid var(--p)}
+.sec-h{margin:56px 0 0;font-size:22px;padding-bottom:10px;border-bottom:3px solid var(--p)}
+.colabs{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:20px}
+.cb{display:flex;align-items:center;gap:14px;border:1px solid var(--bd);border-radius:14px;padding:16px 18px;background:var(--bg);transition:.25s}
+.cb:hover{border-color:var(--p);transform:translateY(-2px)}
+.av{width:60px;height:60px;border-radius:50%;flex:none;overflow:hidden;background:var(--hd);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:24px}
+.av img{width:100%;height:100%;object-fit:cover;display:block}
+.cb .u{flex:1;min-width:0;font-weight:600;font-size:17px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.cb .u small{display:block;font-weight:400;color:var(--mu);font-size:13px}
+.yt{width:44px;height:44px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;color:var(--mu);border:1px solid var(--bd);transition:.2s}
+a.yt:hover{background:#f00;border-color:#f00;color:#fff;transform:scale(1.08)}.yt.off{opacity:.4}
 .notice{border-left:3px solid var(--p);background:var(--bg2);padding:18px 22px;border-radius:0 10px 10px 0;margin-top:40px;color:var(--mu)}.notice b{color:var(--tx)}
 footer{background:var(--hd2);color:#fff;margin-top:56px}footer .mq{--h:30px;--gap:22px;opacity:.9;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
 footer .g{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;padding-top:40px;padding-bottom:32px}footer p{margin:6px 0 0;opacity:.85}footer small{display:block;opacity:.6;margin-top:18px;font-size:13px;line-height:1.55}footer a{display:block;opacity:.8;padding:3px 0}footer a:hover{opacity:1}
