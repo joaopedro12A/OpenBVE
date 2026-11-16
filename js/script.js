@@ -300,7 +300,7 @@ const R = {
 
               <div>
                 <dt>Tamanho</dt>
-                <dd>${val(d.tamanho, "[243.2 MB]")}</dd>
+                <dd>${val(d.tamanho, "[181.65 MB]")}</dd>
               </div>
 
               <div>
