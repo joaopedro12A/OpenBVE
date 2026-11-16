@@ -40,7 +40,7 @@ const CONFIG = {
   download: {
     versao: "",
     tamanho: "",
-    url: "https://www.mediafire.com/file/70vjydryhvi5dzs/Linha_5_Lil%25C3%25A1s_-_Padr%25C3%25A3o_Motiva.zip/file",
+    url: "",
     requisitos: "",
     instalacao: ""
   },
